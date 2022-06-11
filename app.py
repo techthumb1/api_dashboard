@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # ******************* Create Source Managers ******************************
     fred_credentials = os.path.join(BASE_DIR, "api_fred.txt")
-    fred_source = FREDSource(fred_credentials=fred_credentials)
+    fred_source = FREDSource(fred_credentials=fred_credentials)# yPcGSNxzHWLUDx--Wwxp
     quandl_source = QuandlSource(api_key="<462c9e430957fbc1f835c6bc7e7c3e64>")
 
     # File source
