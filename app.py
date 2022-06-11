@@ -1,10 +1,10 @@
 import os
 import logging
 from pathlib import Path
-from dashboard_tutorial.sources import FREDSource, QuandlSource, FileSource
-from dashboard_tutorial.transformers import FractionalDifferentiationEW, FractionalDifferentiationFFD, Differentiation, PercentageChange
-from dashboard_tutorial.managers import ManagerDashboard
-from dashboard_tutorial.views import DashboardView
+from app.source import FREDSource, QuandlSource, FileSource
+from app.transformers import FractionalDifferentiationEW, FractionalDifferentiationFFD, Differentiation, PercentageChange
+from app.managers import ManagerDashboard
+from app.views import DashboardView
 
 
 if __name__ == '__main__':
@@ -37,17 +37,17 @@ if __name__ == '__main__':
 
 
     # ******************* Create Source Managers ******************************
-    fred_credentials = os.path.join(BASE_DIR, "api_fred.txt")
-    fred_source = FREDSource(fred_credentials=fred_credentials)# yPcGSNxzHWLUDx--Wwxp
+    fred_credentials = os.path.join(BASE_DIR, "yPcGSNxzHWLUDx--Wwxp")
+    fred_source = FREDSource(fred_credentials=fred_credentials)
     quandl_source = QuandlSource(api_key="<462c9e430957fbc1f835c6bc7e7c3e64>")
 
     # File source
     file_source_dir = os.path.join(BASE_DIR, "datasets", 'yields')
     file_source = FileSource(dir=file_source_dir)
 
-    manager.sources.register(fred_source)
-    manager.sources.register(quandl_source)
-    manager.sources.register(file_source)
+    manager.source.register(fred_source)
+    manager.source.register(quandl_source)
+    manager.source.register(file_source)
 
     manager.load()
 
