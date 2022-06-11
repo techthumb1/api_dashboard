@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # ******************* Create Source Managers ******************************
     fred_credentials = os.path.join(BASE_DIR, "api_fred.txt")
     fred_source = FREDSource(fred_credentials=fred_credentials)
-    quandl_source = QuandlSource(api_key="<API_KEY>")
+    quandl_source = QuandlSource(api_key="<462c9e430957fbc1f835c6bc7e7c3e64>")
 
     # File source
     file_source_dir = os.path.join(BASE_DIR, "datasets", 'yields')
@@ -57,4 +57,3 @@ if __name__ == '__main__':
     dashboard_view = DashboardView(title="Dashboard", manager=manager)
 
     dashboard_view.show()
-    
